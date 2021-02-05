@@ -1,6 +1,7 @@
 # CS50_AI is Massive Online Open Course.
 
 There are 7 chapeters.
+
 0. Search
 1. Knowledge
 2. Uncertainty
