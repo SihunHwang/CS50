@@ -11,4 +11,4 @@ There are 7 chapeters.
 6. Language
 
 Each chapter is aligned with 2 projects.
-You can see my work on each project on the corresponding branch of the repository.
+You can see my work on each project on the corresponding branch of this repository.
