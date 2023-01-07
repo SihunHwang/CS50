@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            function correct(correct, id)
+            {
+                reset_buttons();
+
+                if (correct)
+                {
+                    document.querySelector('#displayText1').innerHTML = 'Correct!';
+                    document.querySelector(`#${id}`).style.backgroundColor = '#00ff00';
+                }
+                else
+                {
+                    document.querySelector('#displayText1').innerHTML = 'Incorrect';
+                    document.querySelector(`#${id}`).style.backgroundColor = '#ff0000';
+                }
+            }
+
+            function reset_buttons()
+            {
+                document.querySelector('#displayText1').innerHTML = '';
+
+                let buttons = document.getElementsByClassName('button');
+                for(let i = 0; i < 3; i++)
+                {
+                    buttons[i].style.backgroundColor = '#d9edff';
+                }
+            }
+
+            function check()
+            {
+                let answer = document.querySelector('#answer').value;
+
+                if (answer.toLowerCase() == 'venus')
+                {
+                    document.querySelector('#displayText2').innerHTML = 'Correct!';
+                    document.querySelector('#answer').style.backgroundColor = '#00ff00';
+                }
+                else
+                {
+                    document.querySelector('#displayText2').innerHTML = 'Incorrect';
+                    document.querySelector('#answer').style.backgroundColor = '#ff0000';
+                }
+            }
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <h3>How many languages are written from right to left?</h3>
+
+                <div id='displayText1'></div>
+
+                <button class='button' id = 'a' onclick="correct(true, 'a');">12</button>
+                <button class='button' id = 'b' onclick="correct(false, 'b');">13</button>
+                <button class='button' id = 'c' onclick="correct(false, 'c');">14</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <h3>What is the hottest planet in the solar system?</h3>
+                <div id='displayText2'></div>
+
+                <form onsubmit='check(); return false;'>
+                    <input type='text' placeholder="Answer" id='answer'>
+                    <input type='submit'>
+                </form>
+
+            </div>
+
+        </div>
+    </body>
+</html>
